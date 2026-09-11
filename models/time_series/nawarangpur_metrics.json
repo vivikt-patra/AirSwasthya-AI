@@ -1,0 +1,58 @@
+{
+  "location_slug": "nawarangpur",
+  "best_model_name": "sarimax",
+  "history_rows": 92,
+  "history_start": "2026-06-08",
+  "history_end": "2026-09-07",
+  "horizon_days": 7,
+  "stationarity": {
+    "rows": 92,
+    "adf_p_value": 0.009759,
+    "adf_interpretation": "likely stationary",
+    "kpss_p_value": 0.058296,
+    "kpss_interpretation": "likely stationary"
+  },
+  "metrics_by_model": {
+    "naive_last_value": {
+      "mae": 5.9054,
+      "rmse": 6.4708,
+      "r2": -1.7096,
+      "spike_threshold": 6.5437,
+      "spike_day_count": 3,
+      "spike_mae": 6.2056,
+      "normal_day_mae": 5.6802
+    },
+    "arima": {
+      "mae": 4.6315,
+      "rmse": 5.1216,
+      "r2": -0.6975,
+      "spike_threshold": 6.5437,
+      "spike_day_count": 3,
+      "spike_mae": 5.8067,
+      "normal_day_mae": 3.7502
+    },
+    "sarima": {
+      "mae": 4.9197,
+      "rmse": 5.4221,
+      "r2": -0.9025,
+      "spike_threshold": 6.5437,
+      "spike_day_count": 3,
+      "spike_mae": 5.8168,
+      "normal_day_mae": 4.2469
+    },
+    "sarimax": {
+      "mae": 1.2185,
+      "rmse": 1.4595,
+      "r2": 0.8622,
+      "spike_threshold": 6.5437,
+      "spike_day_count": 3,
+      "spike_mae": 0.9596,
+      "normal_day_mae": 1.4127
+    }
+  },
+  "outputs": {
+    "validation_csv": "C:\\Users\\vivik\\OneDrive\\Documents\\Apex_Coding\\GIET_mini_project\\AirSwasthya_AI\\data\\processed\\forecasts\\nawarangpur_validation_7_day.csv",
+    "forecast_csv": "C:\\Users\\vivik\\OneDrive\\Documents\\Apex_Coding\\GIET_mini_project\\AirSwasthya_AI\\data\\processed\\forecasts\\nawarangpur_forecast_7_day.csv",
+    "decomposition_csv": "C:\\Users\\vivik\\OneDrive\\Documents\\Apex_Coding\\GIET_mini_project\\AirSwasthya_AI\\data\\processed\\forecasts\\nawarangpur_decomposition.csv"
+  }
+}

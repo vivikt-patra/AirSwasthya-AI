@@ -1,0 +1,12 @@
+flowchart LR
+    A["Raw India AQI CSV"] --> B["Data loader"]
+    B --> C["Data cleaning"]
+    C --> D["Feature engineering"]
+    D --> E["Model training"]
+    E --> F["Model evaluation"]
+    F --> G["Best model artifact"]
+    G --> H["Streamlit dashboard"]
+    H --> I["AQI prediction"]
+    I --> J["AQI category"]
+    J --> K["Health advisory"]
+

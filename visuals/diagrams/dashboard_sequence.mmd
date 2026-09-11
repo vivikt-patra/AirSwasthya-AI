@@ -1,0 +1,15 @@
+sequenceDiagram
+    participant User
+    participant Dashboard
+    participant ModelArtifact
+    participant PredictionModule
+    participant AdvisoryRules
+
+    User->>Dashboard: Select city or AQI value
+    Dashboard->>ModelArtifact: Load model if available
+    Dashboard->>PredictionModule: Send feature row
+    PredictionModule-->>Dashboard: Predicted AQI
+    Dashboard->>AdvisoryRules: Convert AQI to category/advice
+    AdvisoryRules-->>Dashboard: Category, risk level, message
+    Dashboard-->>User: Show prediction, trend, advisory
+

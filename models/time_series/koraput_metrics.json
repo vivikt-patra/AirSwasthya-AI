@@ -1,0 +1,58 @@
+{
+  "location_slug": "koraput",
+  "best_model_name": "sarimax",
+  "history_rows": 92,
+  "history_start": "2026-06-08",
+  "history_end": "2026-09-07",
+  "horizon_days": 7,
+  "stationarity": {
+    "rows": 92,
+    "adf_p_value": 0.004706,
+    "adf_interpretation": "likely stationary",
+    "kpss_p_value": 0.042181,
+    "kpss_interpretation": "trend/level shift likely"
+  },
+  "metrics_by_model": {
+    "naive_last_value": {
+      "mae": 6.0738,
+      "rmse": 6.6776,
+      "r2": -2.9242,
+      "spike_threshold": 7.2604,
+      "spike_day_count": 1,
+      "spike_mae": 8.8042,
+      "normal_day_mae": 5.6188
+    },
+    "arima": {
+      "mae": 4.8369,
+      "rmse": 5.3151,
+      "r2": -1.4862,
+      "spike_threshold": 7.2604,
+      "spike_day_count": 1,
+      "spike_mae": 8.1823,
+      "normal_day_mae": 4.2794
+    },
+    "sarima": {
+      "mae": 5.3212,
+      "rmse": 5.8229,
+      "r2": -1.984,
+      "spike_threshold": 7.2604,
+      "spike_day_count": 1,
+      "spike_mae": 8.7961,
+      "normal_day_mae": 4.742
+    },
+    "sarimax": {
+      "mae": 0.852,
+      "rmse": 1.0797,
+      "r2": 0.8974,
+      "spike_threshold": 7.2604,
+      "spike_day_count": 1,
+      "spike_mae": 0.0754,
+      "normal_day_mae": 0.9815
+    }
+  },
+  "outputs": {
+    "validation_csv": "C:\\Users\\vivik\\OneDrive\\Documents\\Apex_Coding\\GIET_mini_project\\AirSwasthya_AI\\data\\processed\\forecasts\\koraput_validation_7_day.csv",
+    "forecast_csv": "C:\\Users\\vivik\\OneDrive\\Documents\\Apex_Coding\\GIET_mini_project\\AirSwasthya_AI\\data\\processed\\forecasts\\koraput_forecast_7_day.csv",
+    "decomposition_csv": "C:\\Users\\vivik\\OneDrive\\Documents\\Apex_Coding\\GIET_mini_project\\AirSwasthya_AI\\data\\processed\\forecasts\\koraput_decomposition.csv"
+  }
+}

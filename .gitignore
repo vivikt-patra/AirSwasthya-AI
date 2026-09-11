@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.venv/
+venv/
+env/
+
+# Data and model artifacts
+data/raw/*
+data/processed/*
+data/external/*
+models/*.pkl
+models/*.joblib
+models/*.pickle
+
+# Keep folder placeholders
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/external/.gitkeep
+!models/.gitkeep
+
+# Local files
+.env
+.DS_Store
+Thumbs.db
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Build and release artifacts
+release/
+dist/
+*.zip
+
+# Next.js frontend
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/.env*.local
+frontend/tsconfig.tsbuildinfo
+frontend/.npm-cache/
+
+# Generated test/demo artifacts
+visuals/generated/

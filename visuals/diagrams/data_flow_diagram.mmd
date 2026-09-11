@@ -1,0 +1,12 @@
+flowchart TD
+    U["Dataset source"] --> R["data/raw/city_day.csv"]
+    R --> L["load_raw_dataset"]
+    L --> S["standardize columns"]
+    S --> M["handle missing/invalid values"]
+    M --> C["data/processed/clean_aqi_data.csv"]
+    C --> F["date, lag, rolling features"]
+    F --> T["future AQI target"]
+    T --> X["train/test split"]
+    X --> Y["model metrics"]
+    X --> Z["saved best model"]
+

@@ -1,0 +1,11 @@
+flowchart TD
+    A["Cleaned dataset"] --> B["Build model frame"]
+    B --> C["Time-ordered train/test split"]
+    C --> D["Linear Regression"]
+    C --> E["Random Forest Regressor"]
+    D --> F["MAE, RMSE, R2"]
+    E --> F
+    F --> G["Select lowest RMSE"]
+    G --> H["Save best_model.joblib"]
+    G --> I["Save model_metrics.json"]
+
