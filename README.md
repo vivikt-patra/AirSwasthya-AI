@@ -188,6 +188,7 @@ Latest local publication gate:
 - Person 1: ML model and project lead
 - Person 2: Data cleaning, EDA, and graphs
 - Person 3: Streamlit UI, report, and PPT
+- Code editor/contributor: [@sohamswain](https://github.com/sohamswain)
 
 Replace the placeholders with real team names before final submission.
 

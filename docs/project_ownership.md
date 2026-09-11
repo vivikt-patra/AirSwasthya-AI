@@ -8,6 +8,8 @@ This file records non-functional ownership details for AirSwasthya AI. It is mea
 - Full title: AirSwasthya AI: Explainable AQI Forecasting and Health-Risk Advisory System for Urban Safety
 - Academic level: 3rd semester CSE AIML minor project
 - Team size: 3
+- GitHub code editor/contributor: [@sohamswain](https://github.com/sohamswain)
+- Contribution note: GitHub profile contribution credit requires commits, pull requests, or co-authored commits from the contributor's GitHub-linked email/account. Collaborator access alone does not backfill past contribution graph entries.
 
 ## Safe Copy Protection Approach
 
@@ -37,4 +39,3 @@ Avoid:
 - Dashboard screenshots saved
 - Report and PPT generated in phases
 - Team roles visible in project documents
-

@@ -9,6 +9,7 @@ AirSwasthya AI: Explainable AQI Forecasting and Health-Risk Advisory System for 
 - Person 1: ML model and project lead
 - Person 2: Data cleaning, EDA, and graphs
 - Person 3: Streamlit UI, report, and PPT
+- Code editor/contributor: [@sohamswain](https://github.com/sohamswain)
 
 Replace the role placeholders with real team member names before final submission.
 
