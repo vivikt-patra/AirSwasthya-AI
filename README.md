@@ -1,120 +1,120 @@
 # AirSwasthya AI
 
-**Detailed title:** AirSwasthya AI: Explainable AQI Forecasting and Health-Risk Advisory System for Urban Safety
+**Explainable AQI forecasting and health-risk advisory for Odisha review demos.**
 
-AirSwasthya AI is a minor project for forecasting Air Quality Index (AQI) from historical pollutant data and generating simple health-risk advice for urban users. The first version is intentionally clean, explainable, and review-ready.
+AirSwasthya AI is an academic, explainable air-quality project focused on three priority areas: **Koraput**, **Nawarangpur**, and **Gunupur**. It combines data provenance checks, PM2.5 forecasting, AQI-style public advisories, and a polished local dashboard so reviewers can understand both the model output and the limits behind it.
 
-## Core Idea
+This repository is written to be public-showcase friendly: source code, tests, docs, and safe generated metrics are included; local secrets, raw datasets, build outputs, virtual environments, and release archives are intentionally excluded.
 
-The system analyzes pollutants such as PM2.5, PM10, NO2, SO2, CO, and O3, predicts AQI for the next 1-7 days, classifies air quality, and gives advice such as:
+## Current Status
 
-- Safe
-- Wear mask
-- Reduce outdoor activity
-- Avoid outdoor activity
+| Area | Honest status |
+| --- | --- |
+| GitHub publication package | **85% ready**: clean repo, README, docs, tests, frontend checks, private/public split, ignored sensitive artifacts. |
+| Review 2 implementation demo | **80% ready**: Odisha-first PM2.5 pipeline, Streamlit console, Next.js demo, generated metrics, and tests are present. |
+| Final academic submission | **Not final yet**: final report, final PPT, reviewed screenshots, literature survey, and local ground-sensor validation still need completion. |
 
-## First-Version Scope
+## What It Does
 
-Included:
+- Builds an explainable AQI/PM2.5 project workflow with cleaning, feature engineering, modeling, and advisory rules.
+- Prioritizes Koraput first, then Nawarangpur, then Gunupur for Review 2.
+- Uses recent Open-Meteo gridded PM2.5 history for the working 7-day PM2.5 forecast demo.
+- Uses checked OSPCB 2026 monthly district PDFs as official context where available.
+- Compares simple baseline/time-series approaches and stores model metrics for review discussion.
+- Presents the result through a Streamlit dashboard and a polished Next.js public demo surface.
 
-- India AQI dataset from Kaggle/CPCB-style source
-- Data cleaning and preprocessing
-- EDA graphs
-- Linear Regression model
-- Random Forest Regressor model
-- Model comparison using MAE, RMSE, and R2 score
-- Streamlit dashboard
-- AQI category and health advisory logic
-- Feature importance for explainability
+## What It Does Not Claim
 
-Not included in version 1:
+- It does **not** claim CPCB/OSPCB ground-station daily forecast accuracy for Koraput, Nawarangpur, or Gunupur.
+- It does **not** replace official AQI alerts, medical advice, or emergency guidance.
+- It does **not** use deep learning or LSTM in the current version.
+- It does **not** expose API keys or require provider credentials for the public demo path.
+- It does **not** include raw private/local datasets in Git.
 
-- Deep learning
-- LSTM
-- Overcomplicated deployment
-- Unexplainable model choices
+## Data Boundary
 
-## Tech Stack
+| Source | Used for | Boundary |
+| --- | --- | --- |
+| Kaggle/Rohan Rao India AQI CSVs | Historical scaffold and baseline AQI workflow | Historical dataset; target Odisha towns are not direct rows. |
+| OSPCB 2026 AAQ/DHQ PDFs | Official monthly district context | Monthly evidence, not enough for direct daily 7-day model validation. |
+| Open-Meteo Air Quality API | Recent gridded PM2.5 series for demo forecasts | Model/gridded signal, not a local ground sensor. |
 
-Backend / modeling used:
+## Review 2 Metrics Snapshot
 
-- Python
-- Pandas
-- NumPy
-- Scikit-learn
-- Statsmodels
-- Joblib
+Generated Review 2 metrics currently use Statsmodels SARIMAX on recent Open-Meteo PM2.5 series:
 
-Data and analysis used:
+| Area | Best model | History window | MAE | RMSE | R2 |
+| --- | --- | --- | ---: | ---: | ---: |
+| Koraput | SARIMAX | 2026-06-08 to 2026-09-07 | 0.8520 | 1.0797 | 0.8974 |
+| Nawarangpur | SARIMAX | 2026-06-08 to 2026-09-07 | 1.2185 | 1.4595 | 0.8622 |
+| Gunupur | SARIMAX | 2026-06-08 to 2026-09-07 | 1.0420 | 1.1795 | 0.8041 |
 
-- Historical India AQI CSVs
-- Recent Open-Meteo PM2.5 and weather series
-- OSPCB monthly PDF evidence
-- Matplotlib
-- Plotly
+These scores validate the recent gridded PM2.5 demo series only. They should not be presented as certified local sensor accuracy.
 
-Frontend demo used:
+## Architecture
 
-- Next.js
-- React
-- TypeScript
+```text
+Raw and reference data
+  -> source boundary checks
+  -> cleaning and feature engineering
+  -> AQI/advisory rules
+  -> baseline ML and PM2.5 time-series models
+  -> metrics and generated artifacts
+  -> Streamlit review console
+  -> Next.js public demo dashboard
+```
+
+Important implementation files:
+
+- `src/location_sources.py` defines Koraput, Nawarangpur, and Gunupur source profiles.
+- `src/open_meteo_client.py` normalizes recent gridded PM2.5/weather data.
+- `src/odisha_pdf_ingest.py` extracts OSPCB PDF evidence into structured rows.
+- `src/time_series_forecasting.py` trains baseline, ARIMA, SARIMA, and SARIMAX PM2.5 models.
+- `scripts/build_review2_pipeline.py` orchestrates Review 2 artifact generation.
+- `app/streamlit_app.py` provides the Streamlit review console.
+- `frontend/` contains the Next.js/React demo dashboard.
+
+## Tech Stack Actually Used
+
+Python and modeling:
+
+- Python, Pandas, NumPy
+- Scikit-learn for baseline regression workflow
+- Statsmodels for ARIMA/SARIMA/SARIMAX time-series forecasting
+- Joblib for model artifact handling
+- Matplotlib/Plotly support for visual analysis
+- Pytest for focused tests
+
+Frontend and demo:
+
+- Next.js, React, TypeScript
 - Tailwind CSS
 - Framer Motion
-- Three.js / React Three Fiber
-- Zustand
-- Lucide icons
-- Streamlit fallback dashboard
+- Three.js with React Three Fiber
+- Zustand for UI state
+- Lucide React icons
+- Streamlit fallback/review dashboard
 
-## Team Roles
+Configured but not used for current claims:
 
-- Person 1: ML model and project lead
-- Person 2: Data cleaning, EDA, and graphs
-- Person 3: Streamlit UI, report, and PPT
+- Deep learning, LSTM, production backend deployment, authenticated live APIs, and certified local AQI forecasting.
 
-## Planned Workflow
+## Repository Design
 
-1. Collect and understand dataset.
-2. Clean missing and invalid values.
-3. Perform exploratory data analysis.
-4. Engineer simple time-based and pollutant-based features.
-5. Train baseline and tree-based models.
-6. Compare models.
-7. Save the best model.
-8. Build Streamlit dashboard.
-9. Prepare review-wise PPT/report material.
+The GitHub publishing design follows a public/private split:
 
-## Run Targets
+- **Private master repo:** full working record, local evidence, ignored raw data, local generated artifacts, and future final-report material.
+- **Public showcase repo:** sanitized source, tests, placeholder `.env.example`, public docs, safe generated metrics, and no private artifacts.
 
-Create and use the project environment:
+See `docs/github_publication_strategy.md` for the exact publishing gate and repository tradeoffs.
+
+## Quick Start
+
+Create a Python environment:
 
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
-```
-
-After placing the raw dataset at `data/raw/city_day.csv`, run:
-
-```powershell
-.\.venv\Scripts\python.exe -m src.data_cleaning
-.\.venv\Scripts\python.exe -m src.train_model
-.\.venv\Scripts\python.exe -m src.eda
-.\.venv\Scripts\streamlit.exe run app\streamlit_app.py
-```
-
-Run the Review 2 Next.js frontend demo:
-
-```powershell
-cd frontend
-npm install --cache .npm-cache
-npm run dev -- --port 3000
-```
-
-Build-check the frontend:
-
-```powershell
-cd frontend
-npm run typecheck
-npm run build
 ```
 
 Run tests:
@@ -123,9 +123,38 @@ Run tests:
 .\.venv\Scripts\python.exe -m pytest
 ```
 
-## Optional API Keys
+Run the Streamlit review console:
 
-For provider checks, place keys in the local `.env` file. This file is ignored by Git.
+```powershell
+.\.venv\Scripts\streamlit.exe run app\streamlit_app.py
+```
+
+Run the Next.js demo:
+
+```powershell
+cd frontend
+npm install --cache .npm-cache
+npm run dev -- --port 3000
+```
+
+Check the frontend:
+
+```powershell
+cd frontend
+npm run typecheck
+npm run lint
+npm run build
+```
+
+Rebuild Review 2 artifacts after adding local data:
+
+```powershell
+.\.venv\Scripts\python.exe scripts\build_review2_pipeline.py
+```
+
+## Local Configuration
+
+Optional provider keys can be placed in a local `.env` file. The file is ignored by Git.
 
 ```dotenv
 WAQI_API_TOKEN=
@@ -133,51 +162,35 @@ DATA_GOV_IN_API_KEY=
 OPENAQ_API_KEY=
 ```
 
-The dashboard shows whether each key is present. It does not display the key values.
+The dashboard reports whether keys are configured, but it does not display key values.
 
-Build the Odisha-first Review 2 artifacts:
+## Verification
 
-```powershell
-.\.venv\Scripts\python.exe scripts\build_review2_pipeline.py
-.\.venv\Scripts\streamlit.exe run app\streamlit_app.py
-```
+Latest local publication gate:
 
-## Review 2 Odisha-first update
+- Python tests: `12 passed`
+- Frontend typecheck: passed
+- Frontend lint: passed
+- Frontend production build: passed
+- Secret-pattern scan on committed source: no findings
+- Git ignored artifacts checked: `.env`, raw/processed local data, `.venv`, build output, cache folders, and release ZIPs are excluded
 
-The project now focuses the demo on these priority areas:
+## Project Roadmap
 
-1. Koraput
-2. Nawarangpur
-3. Gunupur
+1. Add reviewed screenshots for README, report, and PPT.
+2. Complete literature survey and dataset license notes.
+3. Add final report and final presentation under `reports/`.
+4. Replace or calibrate gridded demo forecasts with local ground-sensor daily history if such history becomes available.
+5. Add a reproducible release ZIP only after final review artifacts are ready.
 
-Important source boundary:
+## Team
 
-- The Kaggle/Rohan Rao India AQI dataset is historical data, not current live data.
-- The extracted Kaggle files cover 2015-2020 style India AQI records and do not contain Koraput, Nawarangpur, or Gunupur as direct city/station rows.
-- Official OSPCB 2026 DHQ PDFs provide monthly district evidence for Koraput and Nawarangpur/Nawarangapur.
-- Gunupur has no direct official row in the checked Jan-May 2026 OSPCB PDFs, so Rayagada is shown only as district proxy evidence.
-- Open-Meteo Air Quality API is used as a no-key recent gridded PM2.5 source for the working 7-day target-area forecast demo.
+- Person 1: ML model and project lead
+- Person 2: Data cleaning, EDA, and graphs
+- Person 3: Streamlit UI, report, and PPT
 
-Current generated Review 2 model results use Statsmodels SARIMAX on recent Open-Meteo PM2.5 series:
+Replace the placeholders with real team names before final submission.
 
-| Area | Best model | History window | MAE | RMSE | R2 |
-| --- | --- | --- | ---: | ---: | ---: |
-| Koraput | SARIMAX | 2026-06-08 to 2026-09-07 | 0.8520 | 1.0797 | 0.8974 |
-| Nawarangpur | SARIMAX | 2026-06-08 to 2026-09-07 | 1.2185 | 1.4595 | 0.8622 |
-| Gunupur | SARIMAX | 2026-06-08 to 2026-09-07 | 1.0420 | 1.1795 | 0.8041 |
+## License
 
-For implementation decisions and progress, read `docs/review2_execution_plan.md` and `docs/review2_build_log.md`.
-
-Create a clean release ZIP:
-
-```powershell
-.\.venv\Scripts\python.exe scripts\create_release_zip.py
-```
-
-## Review Strategy
-
-The project is built in phases:
-
-- Review 1: idea, problem, objectives, methodology, dataset, timeline
-- Review 2: cleaning, EDA, model used, initial result, dashboard screenshots
-- Final Review: full report, premium PPT, working demo, result comparison, future scope
+See `LICENSE`.

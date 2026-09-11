@@ -3,22 +3,30 @@
   "full_title": "AirSwasthya AI: Explainable AQI Forecasting and Health-Risk Advisory System for Urban Safety",
   "project_type": "3rd semester CSE AIML minor project",
   "team_size": 3,
-  "version_scope": "v1 explainable ML system without deep learning or LSTM",
+  "version_scope": "Review 2 Odisha-first explainable AQI/PM2.5 system without deep learning or LSTM",
+  "github_private_master": "https://github.com/vivikt-patra/AirSwasthya_AI",
+  "github_public_showcase": "https://github.com/vivikt-patra/AirSwasthya-AI",
   "core_features": [
     "AQI forecasting",
     "AQI category classification",
     "Health-risk advisory",
     "Pollutant trend visualization",
     "Feature importance explanation",
-    "Model comparison"
+    "Model comparison",
+    "Odisha-first PM2.5 review demo",
+    "Public/private GitHub publishing split"
   ],
   "planned_models": [
     "Linear Regression",
-    "Random Forest Regressor"
+    "Random Forest Regressor",
+    "ARIMA",
+    "SARIMA",
+    "SARIMAX"
   ],
   "optional_models": [
     "XGBoost"
   ],
+  "readiness_note": "GitHub publication package is about 85% ready; Review 2 implementation demo is about 80% ready; final academic submission still needs report, PPT, screenshots, literature, and local validation evidence.",
+  "claim_boundary": "Current PM2.5 forecast metrics validate a recent gridded Open-Meteo demo series, not certified local ground-station daily accuracy.",
   "protection_note": "Ownership is documented through attribution, manifest, progress notes, visuals, and report material. The code remains readable for academic review."
 }
-

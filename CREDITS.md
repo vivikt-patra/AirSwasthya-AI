@@ -18,8 +18,16 @@ Replace the role placeholders with real team member names before final submissio
 - Pandas
 - NumPy
 - Scikit-learn
+- Statsmodels
 - Matplotlib
 - Plotly
 - Streamlit
 - Joblib
-
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- Three.js / React Three Fiber
+- Zustand
+- Lucide React

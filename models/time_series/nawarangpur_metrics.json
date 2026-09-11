@@ -51,8 +51,8 @@
     }
   },
   "outputs": {
-    "validation_csv": "C:\\Users\\vivik\\OneDrive\\Documents\\Apex_Coding\\GIET_mini_project\\AirSwasthya_AI\\data\\processed\\forecasts\\nawarangpur_validation_7_day.csv",
-    "forecast_csv": "C:\\Users\\vivik\\OneDrive\\Documents\\Apex_Coding\\GIET_mini_project\\AirSwasthya_AI\\data\\processed\\forecasts\\nawarangpur_forecast_7_day.csv",
-    "decomposition_csv": "C:\\Users\\vivik\\OneDrive\\Documents\\Apex_Coding\\GIET_mini_project\\AirSwasthya_AI\\data\\processed\\forecasts\\nawarangpur_decomposition.csv"
+    "validation_csv": "data/processed/forecasts/nawarangpur_validation_7_day.csv",
+    "forecast_csv": "data/processed/forecasts/nawarangpur_forecast_7_day.csv",
+    "decomposition_csv": "data/processed/forecasts/nawarangpur_decomposition.csv"
   }
 }

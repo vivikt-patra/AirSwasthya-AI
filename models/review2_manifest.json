@@ -2,36 +2,36 @@
   "status": "review_2_odisha_forecasting_artifacts",
   "ground_truth_note": "OSPCB PDFs provide official monthly district readings for Koraput and Nawarangpur. Open-Meteo provides recent gridded PM2.5 time series for all priority areas and is used for the 7-day demo forecast until daily local ground-sensor history is available.",
   "ospcb_rows": 150,
-  "readiness_csv": "C:\\Users\\vivik\\OneDrive\\Documents\\Apex_Coding\\GIET_mini_project\\AirSwasthya_AI\\data\\processed\\target_area_readiness.csv",
+  "readiness_csv": "data/processed/target_area_readiness.csv",
   "locations": {
     "koraput": {
       "name": "Koraput",
       "priority": 1,
       "best_model_name": "sarimax",
-      "metrics_path": "C:\\Users\\vivik\\OneDrive\\Documents\\Apex_Coding\\GIET_mini_project\\AirSwasthya_AI\\models\\time_series\\koraput_metrics.json",
-      "forecast_path": "C:\\Users\\vivik\\OneDrive\\Documents\\Apex_Coding\\GIET_mini_project\\AirSwasthya_AI\\data\\processed\\forecasts\\koraput_forecast_7_day.csv",
-      "validation_path": "C:\\Users\\vivik\\OneDrive\\Documents\\Apex_Coding\\GIET_mini_project\\AirSwasthya_AI\\data\\processed\\forecasts\\koraput_validation_7_day.csv",
-      "decomposition_path": "C:\\Users\\vivik\\OneDrive\\Documents\\Apex_Coding\\GIET_mini_project\\AirSwasthya_AI\\data\\processed\\forecasts\\koraput_decomposition.csv",
+      "metrics_path": "models/time_series/koraput_metrics.json",
+      "forecast_path": "data/processed/forecasts/koraput_forecast_7_day.csv",
+      "validation_path": "data/processed/forecasts/koraput_validation_7_day.csv",
+      "decomposition_path": "data/processed/forecasts/koraput_decomposition.csv",
       "model_note": "Primary target. Use Koraput-specific recent gridded PM2.5 data now; replace or calibrate with ground-station history when available."
     },
     "nawarangpur": {
       "name": "Nawarangpur",
       "priority": 2,
       "best_model_name": "sarimax",
-      "metrics_path": "C:\\Users\\vivik\\OneDrive\\Documents\\Apex_Coding\\GIET_mini_project\\AirSwasthya_AI\\models\\time_series\\nawarangpur_metrics.json",
-      "forecast_path": "C:\\Users\\vivik\\OneDrive\\Documents\\Apex_Coding\\GIET_mini_project\\AirSwasthya_AI\\data\\processed\\forecasts\\nawarangpur_forecast_7_day.csv",
-      "validation_path": "C:\\Users\\vivik\\OneDrive\\Documents\\Apex_Coding\\GIET_mini_project\\AirSwasthya_AI\\data\\processed\\forecasts\\nawarangpur_validation_7_day.csv",
-      "decomposition_path": "C:\\Users\\vivik\\OneDrive\\Documents\\Apex_Coding\\GIET_mini_project\\AirSwasthya_AI\\data\\processed\\forecasts\\nawarangpur_decomposition.csv",
+      "metrics_path": "models/time_series/nawarangpur_metrics.json",
+      "forecast_path": "data/processed/forecasts/nawarangpur_forecast_7_day.csv",
+      "validation_path": "data/processed/forecasts/nawarangpur_validation_7_day.csv",
+      "decomposition_path": "data/processed/forecasts/nawarangpur_decomposition.csv",
       "model_note": "Second target. OSPCB spells it as Nawarangapur in 2026 DHQ reports; the model treats it as the same priority area."
     },
     "gunupur": {
       "name": "Gunupur",
       "priority": 3,
       "best_model_name": "sarimax",
-      "metrics_path": "C:\\Users\\vivik\\OneDrive\\Documents\\Apex_Coding\\GIET_mini_project\\AirSwasthya_AI\\models\\time_series\\gunupur_metrics.json",
-      "forecast_path": "C:\\Users\\vivik\\OneDrive\\Documents\\Apex_Coding\\GIET_mini_project\\AirSwasthya_AI\\data\\processed\\forecasts\\gunupur_forecast_7_day.csv",
-      "validation_path": "C:\\Users\\vivik\\OneDrive\\Documents\\Apex_Coding\\GIET_mini_project\\AirSwasthya_AI\\data\\processed\\forecasts\\gunupur_validation_7_day.csv",
-      "decomposition_path": "C:\\Users\\vivik\\OneDrive\\Documents\\Apex_Coding\\GIET_mini_project\\AirSwasthya_AI\\data\\processed\\forecasts\\gunupur_decomposition.csv",
+      "metrics_path": "models/time_series/gunupur_metrics.json",
+      "forecast_path": "data/processed/forecasts/gunupur_forecast_7_day.csv",
+      "validation_path": "data/processed/forecasts/gunupur_validation_7_day.csv",
+      "decomposition_path": "data/processed/forecasts/gunupur_decomposition.csv",
       "model_note": "Third target. Direct Gunupur rows were not found in the checked OSPCB 2026 PDFs; use Gunupur coordinates for gridded PM2.5 and Rayagada only as an official district-level proxy."
     }
   }

@@ -2,72 +2,62 @@
 
 ## Executive summary
 
-AirSwasthya AI is a strong academic project scaffold with a clear explainable-ML direction. The package now contains code, dashboard shell, tests, diagrams, documentation, and packaging scripts. It is ready for Review 1-style evaluation and early implementation review.
+AirSwasthya AI is now GitHub-publication ready as a polished academic/portfolio repository. It contains source code, tests, documentation, Streamlit and Next.js demo surfaces, Odisha-first Review 2 forecasting logic, and clear public/private publishing boundaries.
 
-It is not final-submission ready because real dataset artifacts, trained model outputs, screenshots, real benchmarks, final report, and final PPT are still missing.
+It is not final-submission complete. The final report, final PPT, reviewed screenshots, literature survey, dataset-license notes, and local ground-sensor validation still need to be added before claiming final academic completion.
 
-## Missing documents
+## Readiness scorecard
 
-- Final report
-- Final PPT
-- Literature survey with citations
-- Dataset license confirmation
-- Real benchmark report
-- Model-card style explanation after final model selection
+| Track | Score | Meaning |
+| --- | ---: | --- |
+| GitHub publication package | 85/100 | Clean repository, strong README, safety docs, tests, frontend checks, and sanitized public/private strategy are in place. |
+| Review 2 implementation demo | 80/100 | Odisha-first pipeline, dashboards, metrics, and tests are present; final visual/report material is still pending. |
+| Final academic submission | 65/100 | Good technical base, but report/PPT/literature/screenshot deliverables still need completion. |
+| Local scientific validation | 45/100 | Current PM2.5 forecast uses gridded data and official monthly context, not local daily ground-station validation. |
 
-## Missing images
+## Completed
 
-- Dashboard screenshots
-- EDA graph exports from real data
-- Model comparison chart
-- Feature importance image
+- Python project scaffold and modular source package.
+- AQI category and health advisory rules.
+- Historical AQI cleaning/training scaffold.
+- Odisha-first source profiles for Koraput, Nawarangpur, and Gunupur.
+- OSPCB PDF ingestion support for official monthly context.
+- Open-Meteo PM2.5/weather ingestion support.
+- Baseline, ARIMA, SARIMA, and SARIMAX forecasting helpers.
+- Streamlit review console.
+- Next.js/React public demo dashboard.
+- Focused Python tests.
+- Frontend typecheck, lint, and production build.
+- GitHub-ready README and publication strategy.
+- `.gitignore` protecting local secrets, raw data, generated data, build outputs, virtual environments, caches, and release ZIPs.
 
-## Missing diagrams
+## Still missing
 
-Mermaid source diagrams are added, but exported PNG/SVG images are still needed for PPT/report use.
+- Final report.
+- Final PPT.
+- Reviewed dashboard screenshots.
+- Literature survey with citations.
+- Dataset license/source confirmation for any final raw dataset used.
+- Final review script with speaker roles.
+- End-to-end fresh-clone reproduction run.
+- Local ground-sensor daily validation if the team wants to claim local forecast accuracy.
 
-## Missing demonstrations
+## Current claim boundary
 
-- Dashboard demo after model training
-- End-to-end run from fresh ZIP extraction
-- Review script with speaker roles
+Safe claim:
 
-## Missing videos
+- "AirSwasthya AI is an explainable academic AQI/PM2.5 advisory demo focused on Koraput, Nawarangpur, and Gunupur, using gridded recent PM2.5 forecasts and official monthly OSPCB context."
 
-- Short dashboard walkthrough
-- Optional implementation explanation video
+Unsafe claim:
 
-## Missing research
+- "This is a production public-health system."
+- "This is certified local AQI accuracy."
+- "This is validated with daily OSPCB/CPCB ground-station history for all three target towns."
 
-- Literature survey papers
-- Dataset citation/license
-- Patent search, only if needed for patent/commercial framing
+## Priority improvements before final review
 
-## Missing benchmarks
-
-- Real dataset model metrics
-- Training time
-- Prediction time
-- Dashboard startup time
-
-## Documentation completeness score
-
-Current score: **72/100**
-
-Reason: Core documentation exists, but final report/PPT, real results, screenshots, and literature references are missing.
-
-## Release readiness score
-
-Current score: **58/100**
-
-Reason: The scaffold is professional, but release readiness depends on real dataset integration, final trained model, screenshots, and reproducibility verification.
-
-## Priority improvements before release
-
-1. Add real `city_day.csv` dataset.
-2. Run cleaning/training on real data.
-3. Generate metrics and EDA visuals.
-4. Run dashboard and capture screenshots.
-5. Prepare Review 1 PPT.
-6. Add final report/PPT only after implementation results exist.
-
+1. Capture polished screenshots from Streamlit and Next.js.
+2. Add final Review 2/Final Review PPT material.
+3. Add final report with literature and dataset references.
+4. Add a clean release ZIP only after final artifacts are ready.
+5. Replace or calibrate gridded forecasts with local daily ground-sensor history if available.
