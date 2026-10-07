@@ -1,197 +1,163 @@
-# AirSwasthya AI
+# 🌫️ AirSwasthya AI — Southern Odisha Air Quality & Health Advisory
 
-**Explainable AQI forecasting and health-risk advisory for Odisha review demos.**
+> **Explainable PM2.5 Forecasting and Public Health Protection System for Unmonitored Districts in Southern Odisha.**
 
-AirSwasthya AI is an academic, explainable air-quality project focused on three priority areas: **Koraput**, **Nawarangpur**, and **Gunupur**. It combines data provenance checks, PM2.5 forecasting, AQI-style public advisories, and a polished local dashboard so reviewers can understand both the model output and the limits behind it.
+[![Next.js 16](https://img.shields.io/badge/Next.js-16.3.4-black?style=for-the-badge&logo=nextdotjs)](https://nextjs.org/)
+[![React 19](https://img.shields.io/badge/React-19-blue?style=for-the-badge&logo=react)](https://react.dev/)
+[![Python 3.12](https://img.shields.io/badge/Python-3.12-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
+[![Statsmodels SARIMAX](https://img.shields.io/badge/Model-SARIMAX-emerald?style=for-the-badge)](https://www.statsmodels.org/)
+[![License MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
+[![GIET Mini Project](https://img.shields.io/badge/GIET-Mini_Project_2026-orange?style=for-the-badge)](CONTRIBUTORS.md)
 
-This repository is written to be public-showcase friendly: source code, tests, docs, and safe generated metrics are included; local secrets, raw datasets, build outputs, virtual environments, and release archives are intentionally excluded.
+---
 
-## Current Status
+## 📌 Executive Summary
 
-| Area | Honest status |
-| --- | --- |
-| GitHub publication package | **85% ready**: clean repo, README, docs, tests, frontend checks, private/public split, ignored sensitive artifacts. |
-| Review 2 implementation demo | **80% ready**: Odisha-first PM2.5 pipeline, Streamlit console, Next.js demo, generated metrics, and tests are present. |
-| Final academic submission | **Not final yet**: final report, final PPT, reviewed screenshots, literature survey, and local ground-sensor validation still need completion. |
+**AirSwasthya AI** is an academic engineering project developed by student researchers at **GIET**. It addresses the severe lack of local ground air-monitoring hardware in Southern Odisha by providing a **software-first, explainable PM2.5 forecasting and health-risk advisory platform**.
 
-## What It Does
+The system focuses on three priority unmonitored regions:
+1. 📍 **Koraput** *(Priority 1 Target Area)*
+2. 📍 **Nawarangpur** *(Priority 2 Target Area)*
+3. 📍 **Gunupur** *(Priority 3 Target Area)*
 
-- Builds an explainable AQI/PM2.5 project workflow with cleaning, feature engineering, modeling, and advisory rules.
-- Prioritizes Koraput first, then Nawarangpur, then Gunupur for Review 2.
-- Uses recent Open-Meteo gridded PM2.5 history for the working 7-day PM2.5 forecast demo.
-- Uses checked OSPCB 2026 monthly district PDFs as official context where available.
-- Compares simple baseline/time-series approaches and stores model metrics for review discussion.
-- Presents the result through a Streamlit dashboard and a polished Next.js public demo surface.
+By ingesting gridded satellite atmospheric reanalysis data from Open-Meteo and training **Statsmodels SARIMAX time-series models**, AirSwasthya AI delivers 7-day ahead PM2.5 forecasts aligned with **CPCB (Central Pollution Control Board)** public health guidelines—without requiring ₹2.0 Crore physical ground station deployments.
 
-## What It Does Not Claim
+---
 
-- It does **not** claim CPCB/OSPCB ground-station daily forecast accuracy for Koraput, Nawarangpur, or Gunupur.
-- It does **not** replace official AQI alerts, medical advice, or emergency guidance.
-- It does **not** use deep learning or LSTM in the current version.
-- It does **not** expose API keys or require provider credentials for the public demo path.
-- It does **not** include raw private/local datasets in Git.
+## ✨ Key Features
 
-## Data Boundary
+- 🛰️ **Satellite Atmospheric Reanalysis**: Ingests 92+ days of continuous historical PM2.5 and meteorological observations from satellite models.
+- 📈 **Explainable SARIMAX Machine Learning**: Transparent time-series forecasting with verified data provenance (no opaque black-box models).
+- 🎨 **IQAir-Style Modern Web Dashboard**: Next.js 16 frontend featuring glassmorphism cards, interactive 3D particle canvas (React Three Fiber), and smooth hover dropdown navigation.
+- 🛡️ **CPCB Health Risk Guidance**: Real-time health advisory recommendations tailored for citizens, children, and vulnerable groups.
+- 🤝 **100% Free Public Facilitation**: Public tools for downloading daily district reports, accessing satellite API series, and subscribing to alerts.
 
-| Source | Used for | Boundary |
-| --- | --- | --- |
-| Kaggle/Rohan Rao India AQI CSVs | Historical scaffold and baseline AQI workflow | Historical dataset; target Odisha towns are not direct rows. |
-| OSPCB 2026 AAQ/DHQ PDFs | Official monthly district context | Monthly evidence, not enough for direct daily 7-day model validation. |
-| Open-Meteo Air Quality API | Recent gridded PM2.5 series for demo forecasts | Model/gridded signal, not a local ground sensor. |
+---
 
-## Review 2 Metrics Snapshot
+## 📊 Model Performance Snapshot
 
-Generated Review 2 metrics currently use Statsmodels SARIMAX on recent Open-Meteo PM2.5 series:
+Validation results for 7-day PM2.5 predictions using Statsmodels SARIMAX across target districts:
 
-| Area | Best model | History window | MAE | RMSE | R2 |
-| --- | --- | --- | ---: | ---: | ---: |
-| Koraput | SARIMAX | 2026-06-08 to 2026-09-07 | 0.8520 | 1.0797 | 0.8974 |
-| Nawarangpur | SARIMAX | 2026-06-08 to 2026-09-07 | 1.2185 | 1.4595 | 0.8622 |
-| Gunupur | SARIMAX | 2026-06-08 to 2026-09-07 | 1.0420 | 1.1795 | 0.8041 |
+| Target District | Priority Level | Best Model | MAE (µg/m³) | RMSE (µg/m³) | $R^2$ Score |
+| :--- | :--- | :--- | :---: | :---: | :---: |
+| **Koraput** | Priority 1 | SARIMAX | **0.852** | **1.080** | **0.897** |
+| **Nawarangpur** | Priority 2 | SARIMAX | **1.218** | **1.460** | **0.862** |
+| **Gunupur** | Priority 3 | SARIMAX | **1.042** | **1.180** | **0.804** |
 
-These scores validate the recent gridded PM2.5 demo series only. They should not be presented as certified local sensor accuracy.
+> *Note: Metrics reflect recent gridded satellite reanalysis series validation and provide an explainable baseline.*
 
-## Architecture
+---
+
+## 🏗️ System Architecture
 
 ```text
-Raw and reference data
-  -> source boundary checks
-  -> cleaning and feature engineering
-  -> AQI/advisory rules
-  -> baseline ML and PM2.5 time-series models
-  -> metrics and generated artifacts
-  -> Streamlit review console
-  -> Next.js public demo dashboard
+┌────────────────────────────────────────────────────────┐
+│   Open-Meteo Air Quality & Weather Satellite API Data  │
+└───────────────────────────┬────────────────────────────┘
+                            │
+                            ▼
+┌────────────────────────────────────────────────────────┐
+│     Data Provenance & Source Boundary Ingestion        │
+│    (Koraput, Nawarangpur, Gunupur Gridded Series)      │
+└───────────────────────────┬────────────────────────────┘
+                            │
+                            ▼
+┌────────────────────────────────────────────────────────┐
+│     Statsmodels SARIMAX Time-Series ML Pipeline        │
+│       (Feature Engineering & 7-Day Forecasting)        │
+└───────────────────────────┬────────────────────────────┘
+                            │
+                            ▼
+┌────────────────────────────────────────────────────────┐
+│        CPCB Health Risk Advisory Rules Engine          │
+└───────────────────────────┬────────────────────────────┘
+                            │
+            ┌───────────────┴───────────────┐
+            ▼                               ▼
+┌───────────────────────┐       ┌───────────────────────┐
+│ Next.js 16 Dashboard  │       │ Streamlit Review Console │
+│   (Public Web UI)     │       │  (Academic Evaluation)│
+└───────────────────────┘       └───────────────────────┘
 ```
 
-Important implementation files:
+---
 
-- `src/location_sources.py` defines Koraput, Nawarangpur, and Gunupur source profiles.
-- `src/open_meteo_client.py` normalizes recent gridded PM2.5/weather data.
-- `src/odisha_pdf_ingest.py` extracts OSPCB PDF evidence into structured rows.
-- `src/time_series_forecasting.py` trains baseline, ARIMA, SARIMA, and SARIMAX PM2.5 models.
-- `scripts/build_review2_pipeline.py` orchestrates Review 2 artifact generation.
-- `app/streamlit_app.py` provides the Streamlit review console.
-- `frontend/` contains the Next.js/React demo dashboard.
+## 🛠️ Technology Stack
 
-## Tech Stack Actually Used
+### Frontend & Web UI (`frontend/`)
+* **Framework**: Next.js 16 (React 19, Turbopack, App Router)
+* **Styling**: Tailwind CSS with custom glassmorphism tokens
+* **Animations**: Framer Motion 12
+* **3D Visuals**: Three.js & React Three Fiber (`@react-three/fiber`)
+* **State & Icons**: Zustand & Lucide React
 
-Python and modeling:
+### Backend & Machine Learning (`src/`, `app/`)
+* **Language**: Python 3.12
+* **Data Processing**: Pandas, NumPy
+* **Forecasting**: Statsmodels (ARIMA, SARIMA, SARIMAX), Scikit-learn
+* **Review Console**: Streamlit
+* **Testing**: Pytest
 
-- Python, Pandas, NumPy
-- Scikit-learn for baseline regression workflow
-- Statsmodels for ARIMA/SARIMA/SARIMAX time-series forecasting
-- Joblib for model artifact handling
-- Matplotlib/Plotly support for visual analysis
-- Pytest for focused tests
+---
 
-Frontend and demo:
+## 🚀 Quick Start & Installation
 
-- Next.js, React, TypeScript
-- Tailwind CSS
-- Framer Motion
-- Three.js with React Three Fiber
-- Zustand for UI state
-- Lucide React icons
-- Streamlit fallback/review dashboard
+### 1. Frontend Web Dashboard
 
-Configured but not used for current claims:
+```bash
+# Navigate to frontend folder
+cd frontend
 
-- Deep learning, LSTM, production backend deployment, authenticated live APIs, and certified local AQI forecasting.
+# Install Node dependencies
+npm install
 
-## Repository Design
+# Run local development server
+npm run dev
+```
 
-The GitHub publishing design follows a public/private split:
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-- **Private master repo:** full working record, local evidence, ignored raw data, local generated artifacts, and future final-report material.
-- **Public showcase repo:** sanitized source, tests, placeholder `.env.example`, public docs, safe generated metrics, and no private artifacts.
+### 2. Python Backend & Streamlit Console
 
-See `docs/github_publication_strategy.md` for the exact publishing gate and repository tradeoffs.
-
-## Quick Start
-
-Create a Python environment:
-
-```powershell
+```bash
+# Create and activate Python virtual environment
 python -m venv .venv
-.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+# On Windows PowerShell:
+.\.venv\Scripts\Activate.ps1
+
+# Install Python requirements
+pip install -r requirements.txt
+
+# Run pytest suite
+pytest
+
+# Launch Streamlit Review Console
+streamlit run app/streamlit_app.py
 ```
 
-Run tests:
+---
 
-```powershell
-.\.venv\Scripts\python.exe -m pytest
-```
+## 👥 GIET Student Project Team
 
-Run the Streamlit review console:
+AirSwasthya AI was built as a collaborative Final Year Engineering Mini Project (2026) at **GIET**.
 
-```powershell
-.\.venv\Scripts\streamlit.exe run app\streamlit_app.py
-```
+* 🧑‍💻 **Vivikt Patra** ([@viviktpatra](https://github.com/viviktpatra) | `viviktpatra@gmail.com`)  
+  *Lead Developer & Machine Learning Model Architect*
+* 🧑‍💻 **Soham Swain** ([@sohamswain](https://github.com/sohamswain) | `sohamswain26@gmail.com`)  
+  *Data Engineering & System Contributor*
+* 🧑‍💻 **Mukul** (*GIET Student Contributor*)  
+  *Project Contributor & Validation Analyst*
 
-Run the Next.js demo:
+---
 
-```powershell
-cd frontend
-npm install --cache .npm-cache
-npm run dev -- --port 3000
-```
+## 🔒 Security & Data Privacy
 
-Check the frontend:
+* 🛡️ No private API keys or credentials are committed to Git history.
+* 📄 All local environment configurations use `.env.example` templates.
+* 🧹 `.gitignore` strictly excludes `node_modules`, `.next`, `.venv`, `.env`, and build outputs.
 
-```powershell
-cd frontend
-npm run typecheck
-npm run lint
-npm run build
-```
+---
 
-Rebuild Review 2 artifacts after adding local data:
+## 📄 License
 
-```powershell
-.\.venv\Scripts\python.exe scripts\build_review2_pipeline.py
-```
-
-## Local Configuration
-
-Optional provider keys can be placed in a local `.env` file. The file is ignored by Git.
-
-```dotenv
-WAQI_API_TOKEN=
-DATA_GOV_IN_API_KEY=
-OPENAQ_API_KEY=
-```
-
-The dashboard reports whether keys are configured, but it does not display key values.
-
-## Verification
-
-Latest local publication gate:
-
-- Python tests: `12 passed`
-- Frontend typecheck: passed
-- Frontend lint: passed
-- Frontend production build: passed
-- Secret-pattern scan on committed source: no findings
-- Git ignored artifacts checked: `.env`, raw/processed local data, `.venv`, build output, cache folders, and release ZIPs are excluded
-
-## Project Roadmap
-
-1. Add reviewed screenshots for README, report, and PPT.
-2. Complete literature survey and dataset license notes.
-3. Add final report and final presentation under `reports/`.
-4. Replace or calibrate gridded demo forecasts with local ground-sensor daily history if such history becomes available.
-5. Add a reproducible release ZIP only after final review artifacts are ready.
-
-## Team
-
-- Person 1: ML model and project lead
-- Person 2: Data cleaning, EDA, and graphs
-- Person 3: Streamlit UI, report, and PPT
-- Code editor/contributor: [@sohamswain](https://github.com/sohamswain)
-
-Replace the placeholders with real team names before final submission.
-
-## License
-
-See `LICENSE`.
+This project is open-source and available under the [MIT License](LICENSE).

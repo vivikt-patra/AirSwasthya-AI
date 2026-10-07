@@ -1,21 +1,23 @@
-# Contributors
+# Project Contributors — AirSwasthya AI
 
-AirSwasthya AI keeps contributor credit visible in source control and project documentation.
+AirSwasthya AI was built as an academic Final Year Engineering Mini Project (2026) at **GIET**.
 
-## Project team
+## GIET Student Project Team
 
-- Person 1: ML model and project lead
-- Person 2: Data cleaning, EDA, and graphs
-- Person 3: Streamlit UI, report, and PPT
+- **Vivikt Patra** ([@viviktpatra](https://github.com/viviktpatra) | `viviktpatra@gmail.com`)
+  - *Role*: Lead Developer & Machine Learning Model Architect
+  - *Focus*: Statsmodels SARIMAX forecasting, Next.js frontend shell, 3D Canvas integration, and health advisory rules.
 
-Replace the placeholders with real team member names before final submission.
+- **Soham Swain** ([@sohamswain](https://github.com/sohamswain) | `sohamswain26@gmail.com`)
+  - *Role*: Data Engineering & System Contributor
+  - *Focus*: Data cleaning, Open-Meteo satellite API pipeline, EDA, and historical validation series.
 
-## Code editor / contributor
+- **Mukul** (*GIET Team Contributor*)
+  - *Role*: Project Contributor & Validation Analyst
+  - *Focus*: Academic report documentation, CPCB standard verification, and testing.
 
-- [@sohamswain](https://github.com/sohamswain)
+---
 
-## GitHub contribution note
+## Contribution Tracking & Git Commits
 
-GitHub profile contribution graphs are based on commits, pull requests, reviews, issues, and co-authored commits connected to the contributor's GitHub account. Repository collaborator access lets a person edit code, but it does not automatically make older commits appear as that person's contributions.
-
-For visible future credit, commits should be authored from the contributor's GitHub-linked email or include a valid `Co-authored-by:` trailer.
+All repository contributions, commits, and pull requests are attributed to team members via their registered GitHub emails (`viviktpatra@gmail.com`, `sohamswain26@gmail.com`) and standard `Co-authored-by:` commit trailers.

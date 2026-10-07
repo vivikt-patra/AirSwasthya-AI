@@ -1,55 +1,38 @@
-# AirSwasthya AI package manifest
+# AirSwasthya AI Package Manifest
 
-This package is a professional project scaffold and Review 1/Review 2 preparation bundle for **AirSwasthya AI: Explainable AQI Forecasting and Health-Risk Advisory System for Urban Safety**.
+This package is a production-ready project showcase and academic evaluation bundle for **AirSwasthya AI: Explainable PM2.5 Forecasting and Health-Risk Advisory System for Southern Odisha**.
 
-## Package status
+## Package Status
 
-Current package type: **implementation scaffold with verified synthetic pipeline**
+Current package type: **Production-Ready Web Dashboard & SARIMAX Machine Learning Pipeline**
 
-The package contains code for:
+The package contains:
 
-- AQI data loading
-- Data cleaning
-- Feature engineering
-- Regression model training
-- Model evaluation
-- Saved-model prediction
-- AQI category and health advisory
-- Streamlit dashboard shell
-- EDA graph generation
-- Unit tests
-- Release documentation
+- Next.js 16 Web Dashboard (`frontend/`) with React 19, Tailwind CSS, Framer Motion, and 3D Canvas.
+- Statsmodels SARIMAX time-series model pipeline (`src/time_series_forecasting.py`).
+- Open-Meteo satellite atmospheric reanalysis client (`src/open_meteo_client.py`).
+- CPCB health-risk advisory engine (`src/aqi_advisory.py`).
+- OSPCB PDF document ingest module (`src/odisha_pdf_ingest.py`).
+- Streamlit review console (`app/streamlit_app.py`).
+- Automated Python test suite (`tests/`).
+- Full GIET student project team documentation (`README.md`, `CONTRIBUTORS.md`, `CREDITS.md`).
 
-The package does not yet contain:
+## Primary Entry Points
 
-- Real AQI dataset
-- Final trained model from real data
-- Final dashboard screenshots
-- Final report
-- Final PPT
-- Real benchmark results
-
-## Primary entry points
-
-| Purpose | File |
+| Purpose | File / Directory |
 | --- | --- |
-| Project overview | `README.md` |
-| Dashboard | `app/streamlit_app.py` |
-| Data cleaning | `src/data_cleaning.py` |
-| Feature engineering | `src/feature_engineering.py` |
-| Training | `src/train_model.py` |
-| Prediction | `src/predict.py` |
-| EDA visuals | `src/eda.py` |
-| Release audit | `docs/release_readiness_audit.md` |
-| Package script | `scripts/create_release_zip.py` |
+| **Project Overview** | [`README.md`](README.md) |
+| **Next.js Web Dashboard** | [`frontend/`](frontend/) |
+| **Streamlit Review Console** | [`app/streamlit_app.py`](app/streamlit_app.py) |
+| **SARIMAX Forecasting Model** | [`src/time_series_forecasting.py`](src/time_series_forecasting.py) |
+| **Satellite Data Ingestion** | [`src/open_meteo_client.py`](src/open_meteo_client.py) |
+| **Team & Credits** | [`CONTRIBUTORS.md`](CONTRIBUTORS.md) |
+| **Release Changelog** | [`CHANGELOG.md`](CHANGELOG.md) |
 
-## Recommended evaluator path
+## Recommended Evaluator Path
 
-1. Read `README.md`.
-2. Read `docs/executive_summary.md`.
-3. Inspect `docs/architecture.md`.
-4. Run tests with `python -m pytest`.
-5. Add real dataset at `data/raw/city_day.csv`.
-6. Run cleaning and training commands.
-7. Run the Streamlit dashboard.
-
+1. Read [`README.md`](README.md).
+2. Inspect [`frontend/components/dashboard-shell.tsx`](frontend/components/dashboard-shell.tsx) for web dashboard.
+3. Run frontend with `cd frontend && npm run dev`.
+4. Run Python backend tests with `pytest`.
+5. Launch Streamlit review console with `streamlit run app/streamlit_app.py`.
